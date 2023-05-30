@@ -2,33 +2,45 @@
 <html>
   <head>
     <title>Reddy Careers</title>
-    
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit:cover;
+        margin-bottom: 16px;
+      }
+    </style>
   </head>
   <body>
-    <div >
-      <h1 class = "text-center mt-2 mt-4">REDDY CAREERS</h1>
-    <img class=' center-block' src = "https://thumbs.dreamstime.com/b/software-development-data-digital-programs-system-technology-concept-software-development-data-digital-programs-system-technology-118769222.jpg"  width=80% height=300px alt =responsive-image>
-    <h2 class = "text-center mt-2 mt-4">About Reddy</h2>
-    <p class =>
-      We are a data centric company work on data for multiple companies to resolve their data infrastructure and ease of work with data. 
-    </p>
-    <h3 class = "text-center mt-2 mt-4">Job Openings</h3>
-  <div> 
-    {%for job in jobs%}
-    
-        {% include 'jobitem.html' %}
-    
-        {%endfor%}
-  </div>
-    <div class = " text-center btn btn-block btn-primary btn-lg active "">
-      <button>Contact Us</button>
-      <p>Copyright,Reddy</p>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://media.istockphoto.com/id/1166124895/vector/office-fun-happy-office-workers-jumping-up.jpg?s=612x612&w=0&k=20&c=7rLc-INgKsOdKzan50pHkhqnbDHQYD-EIybwg1U7dEk=" >
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">
+        {{company_name}} Careers
+      </h1>
+      <div class="row" style="margin-bottom:32px">
+        <div class="col-md-6">
+      <p class="lead">
+        At Jovian, we’re on a mission to build the most highly reputed technical university in the world, and we’re building it completely online. Our flagship data science program helps working professionals with a background in programming or analytics make a career transition to data science. We also offer several free beginner-friendly courses and have a fast-growing community of 200,000+ users.
+      </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYZBh0s0VzI2C7jPzOcDbjKJmTzn6DVgGnh1lcLdwTiw&usqp=CAU&ec=48665701" style="height:320px;border-radius:4px;">
+        </div>
+      </div>
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+      <a class="btn btn-primary btn-lg" href="mailto:hello@jovian.ai?subject=Question%20about%20Job%20Opernings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20questions%3A%20%3Center%20question%20here%3E%0D%0A">Contact Us</a>
+      </div>
     </div>
-    </div>
+    {% include 'footer.html' %}
   </body>
 </html>
