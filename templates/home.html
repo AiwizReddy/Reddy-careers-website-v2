@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reddy Careers</title>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div >
+      <h1 class = "text-center mt-2 mt-4">REDDY CAREERS</h1>
+    <img class=' center-block' src = "https://thumbs.dreamstime.com/b/software-development-data-digital-programs-system-technology-concept-software-development-data-digital-programs-system-technology-118769222.jpg"  width=80% height=300px alt =responsive-image>
+    <h2 class = "text-center mt-2 mt-4">About Reddy</h2>
+    <p class =>
+      We are a data centric company work on data for multiple companies to resolve their data infrastructure and ease of work with data. 
+    </p>
+    <h3 class = "text-center mt-2 mt-4">Job Openings</h3>
+  <div> 
+    {%for job in jobs%}
+    
+        {% include 'jobitem.html' %}
+    
+        {%endfor%}
+  </div>
+    <div class = " text-center btn btn-block btn-primary btn-lg active "">
+      <button>Contact Us</button>
+      <p>Copyright,Reddy</p>
+    </div>
+    </div>
+  </body>
+</html>
